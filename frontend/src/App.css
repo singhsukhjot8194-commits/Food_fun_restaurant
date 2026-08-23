@@ -22,9 +22,13 @@
 * {
     font-family: "Oswald", sans-serif;
     box-sizing: border-box;
-    overflow-x: hidden;
     margin: 0;
     padding: 0;
+}
+
+body {
+    overflow-x: hidden;
+    background-color: var(--light-bg);
 }
 
 ::-webkit-scrollbar {
@@ -36,10 +40,10 @@
 
 nav {
     display: flex;
+    width: 100%;
     max-width: 1500px;
-    min-width: 1500px;
     padding: 20px 30px;
-    margin-bottom: 25px;
+    margin: 0 auto 25px auto;
     justify-content: space-between;
     position: relative;
     align-items: center;
@@ -138,17 +142,11 @@ nav .menuBtn:hover {
 nav .hamburger {
     display: none;
     color: var(--primary-color);
+    cursor: pointer;
 }
 
 nav svg {
     font-size: 1.85rem;
-}
-
-@media (max-width: 1520px) {
-    nav {
-        min-width: 100%;
-        padding: 20px 30px;
-    }
 }
 
 @media (max-width: 1100px) {
@@ -211,8 +209,8 @@ nav svg {
 
 .heroSection .container {
     display: flex;
+    width: 100%;
     max-width: 1200px;
-    min-width: 1200px;
 }
 
 .heroSection .container .banner:first-child {
@@ -278,8 +276,6 @@ nav svg {
 
 @media (max-width: 1280px) {
     .heroSection .container {
-        width: 100%;
-        min-width: fit-content;
         padding: 30px 20px;
     }
 }
@@ -333,8 +329,8 @@ nav svg {
 }
 
 .about .container {
+    width: 100%;
     max-width: 1500px;
-    min-width: 1500px;
     display: flex;
     gap: 40px;
 }
@@ -419,12 +415,6 @@ nav svg {
     box-shadow: 0 15px 25px rgba(217, 56, 30, 0.4);
 }
 
-@media (max-width: 1520px) {
-    .about .container {
-        min-width: 100%;
-    }
-}
-
 @media (max-width: 786px) {
     .about .container {
         flex-direction: column-reverse;
@@ -451,7 +441,7 @@ nav svg {
 }
 
 .qualities .container {
-    min-width: 1500px;
+    width: 100%;
     max-width: 1500px;
     display: flex;
     flex-wrap: wrap;
@@ -500,12 +490,6 @@ nav svg {
     line-height: 1.5;
 }
 
-@media (max-width: 1520px) {
-    .qualities .container {
-        min-width: 100%;
-    }
-}
-
 @media (max-width: 635px) {
     .qualities .container .card {
         flex: none;
@@ -526,8 +510,8 @@ nav svg {
 }
 
 .menu .container {
+    width: 100%;
     max-width: 1500px;
-    min-width: 1500px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -605,12 +589,6 @@ nav svg {
     letter-spacing: 1px;
 }
 
-@media (max-width: 1520px) {
-    .menu .container {
-        min-width: 100%;
-    }
-}
-
 @media (max-width: 1000px) {
     .menu .container .dishes_container .card {
         width: calc(50% - 20px);
@@ -636,8 +614,8 @@ nav svg {
 }
 
 .team .container {
+    width: 100%;
     max-width: 1500px;
-    min-width: 1500px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -703,12 +681,6 @@ nav svg {
     letter-spacing: 1px;
 }
 
-@media (max-width: 1520px) {
-    .team .container {
-        min-width: 100%;
-    }
-}
-
 @media (max-width: 810px) {
     .team .container .team_container .card {
         width: calc(50% - 20px);
@@ -735,8 +707,8 @@ nav svg {
 }
 
 .who_are_we .container {
+    width: 100%;
     max-width: 1500px;
-    min-width: 1500px;
     display: flex;
     align-items: center;
 }
@@ -783,12 +755,6 @@ nav svg {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
 }
 
-@media (max-width: 1520px) {
-    .who_are_we .container {
-        min-width: 100%;
-    }
-}
-
 @media (max-width: 700px) {
     .who_are_we .container {
         flex-direction: column;
@@ -816,8 +782,8 @@ nav svg {
 }
 
 .reservation .container {
+    width: 100%;
     max-width: 1500px;
-    min-width: 1500px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -830,7 +796,8 @@ nav svg {
 }
 
 .reservation .container .banner .reservation_form_box {
-    width: 440px;
+    width: 100%;
+    max-width: 440px;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(15px);
     border-radius: 24px;
@@ -921,12 +888,6 @@ nav svg {
     filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.4));
 }
 
-@media (max-width: 1520px) {
-    .reservation .container {
-        min-width: 100%;
-    }
-}
-
 @media (max-width: 885px) {
     .reservation .container {
         flex-direction: column;
@@ -953,8 +914,8 @@ footer {
 }
 
 footer .container {
+    width: 100%;
     max-width: 1500px;
-    min-width: 1500px;
     display: flex;
     flex-direction: column;
 }
@@ -1002,12 +963,6 @@ footer .container .banner:last-child .left a {
 
 footer .container .banner:last-child .left a:hover {
     color: var(--primary-color);
-}
-
-@media (max-width: 1520px) {
-    footer .container {
-        min-width: 100%;
-    }
 }
 
 @media (max-width: 530px) {
