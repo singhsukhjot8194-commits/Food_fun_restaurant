@@ -1,0 +1,23 @@
+{
+    "name": "backend",
+    "version": "1.0.0",
+    "description": "",
+    "license": "ISC",
+    "author": "sukhjot singh",
+    "type": "module",
+    "main": "index.js",
+    "scripts": {
+
+        "dev": "nodemon backend/server.js",
+        "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
+        "start": "nodemon backend/server.js"
+    },
+    "dependencies": {
+        "cors": "^2.8.6",
+        "dotenv": "^17.4.2",
+        "express": "^5.2.1",
+        "mongodb": "^7.5.0",
+        "mongoose": "^9.9.2",
+        "validator": "^13.15.35"
+    }
+}
