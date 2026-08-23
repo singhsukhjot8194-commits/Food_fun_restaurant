@@ -26,9 +26,7 @@
     padding: 0;
 }
 
-html,
 body {
-    width: 100%;
     overflow-x: hidden;
     background-color: var(--light-bg);
 }
@@ -44,17 +42,17 @@ nav {
     display: flex;
     width: 100%;
     max-width: 1500px;
-    padding: 15px 25px;
+    padding: 20px 30px;
     margin: 0 auto 25px auto;
     justify-content: space-between;
     position: relative;
     align-items: center;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.9);
     backdrop-filter: blur(10px);
     border-bottom-right-radius: 16px;
     border-bottom-left-radius: 16px;
     box-shadow: var(--shadow-sm);
-    z-index: 1000;
+    transition: all 0.3s ease;
 }
 
 nav::after {
@@ -68,7 +66,10 @@ nav::after {
 }
 
 nav .logo {
-    font-size: 2rem;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    font-size: 2.2rem;
     font-weight: 700;
     background: var(--accent-gradient);
     -webkit-background-clip: text;
@@ -77,10 +78,10 @@ nav .logo {
 }
 
 nav .navLinks {
+    flex: 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 30px;
 }
 
 nav .navLinks .links {
@@ -91,7 +92,7 @@ nav .navLinks .links {
 nav .navLinks .links a {
     text-decoration: none;
     color: var(--text-dark);
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 400;
     letter-spacing: 1.5px;
     text-transform: uppercase;
@@ -130,67 +131,63 @@ nav .menuBtn {
     letter-spacing: 1px;
     box-shadow: var(--shadow-glow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
 }
 
 nav .menuBtn:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 20px rgba(217, 56, 30, 0.5);
+    cursor: pointer;
 }
 
 nav .hamburger {
     display: none;
     color: var(--primary-color);
     cursor: pointer;
-    font-size: 2rem;
 }
 
-
-/* Mobile Vertical Slide-Down Drawer */
+nav svg {
+    font-size: 1.85rem;
+}
 
 @media (max-width: 1100px) {
     nav {
-        padding: 15px 20px;
+        z-index: 20;
+        position: relative;
+        background: #ffffff;
+        padding: 15px 30px;
     }
     nav::after {
         display: none;
     }
     nav .hamburger {
         display: flex;
-        align-items: center;
     }
     nav .navLinks {
-        position: fixed;
-        top: -100%;
-        left: 0;
-        width: 100vw;
-        height: max-content;
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        top: -1000px;
         background: #ffffff;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 35px 20px 30px;
-        gap: 20px;
-        box-shadow: var(--shadow-lg);
-        transition: top 0.4s ease-in-out;
-        z-index: 999;
-    }
-    nav .navLinks.showmenu {
-        top: 60px;
-        /* Slides right beneath navigation header */
-    }
-    nav .navLinks .links {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
         width: 100%;
+        left: 0;
+        padding: 25px 15px;
+        z-index: 10;
+        transition: 0.4s ease-in-out;
+        box-shadow: var(--shadow-lg);
+    }
+    nav .showmenu {
+        top: 70px;
+        margin: 0;
+        width: 100%;
+        border-radius: 0 0 16px 16px;
+    }
+    nav .showmenu .links {
+        flex-direction: column;
         text-align: center;
+        gap: 15px;
     }
     nav .menuBtn {
-        width: 80%;
-        max-width: 250px;
-        text-align: center;
-        margin-top: 10px;
+        margin-top: 20px;
     }
 }
 
@@ -208,7 +205,6 @@ nav .hamburger {
     background-size: cover;
     background-position: center;
     padding: 20px 15px;
-    overflow: hidden;
 }
 
 .heroSection .container {
@@ -233,10 +229,8 @@ nav .hamburger {
 }
 
 .heroSection .container .banner .title {
-    font-size: clamp(3.2rem, 9vw, 8.5rem);
+    font-size: 8.5rem;
     font-weight: 700;
-    line-height: 1.1;
-    word-break: break-word;
     background: linear-gradient(180deg, #1f2937 0%, #374151 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -282,11 +276,14 @@ nav .hamburger {
 
 @media (max-width: 1280px) {
     .heroSection .container {
-        padding: 20px 10px;
+        padding: 30px 20px;
     }
 }
 
 @media (max-width: 1072px) {
+    .heroSection .container .banner .title {
+        font-size: 6.5rem;
+    }
     .heroSection .container .banner .imageBox img {
         width: 250px;
         height: 335px;
@@ -294,13 +291,6 @@ nav .hamburger {
 }
 
 @media (max-width: 830px) {
-    .heroSection .container {
-        flex-direction: column;
-    }
-    .heroSection .container .banner:last-child {
-        text-align: center;
-        margin-top: 20px;
-    }
     .heroSection .container .banner:last-child .imageBox img {
         display: none;
     }
@@ -311,11 +301,18 @@ nav .hamburger {
         width: 100%;
         text-align: center;
     }
+    .heroSection .container .banner .textAndLogo .title,
+    .heroSection .container .banner .textAndLogo .logo {
+        margin-right: 0;
+    }
     .heroSection .container .banner .imageBox img {
         width: 100%;
-        max-width: 380px;
-        height: auto;
-        margin: 0 auto;
+    }
+}
+
+@media (max-width: 520px) {
+    .heroSection .container .banner .title {
+        font-size: 4rem;
     }
 }
 
@@ -353,7 +350,7 @@ nav .hamburger {
 
 .heading {
     font-weight: 600;
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: 4rem;
     color: var(--text-dark);
     position: relative;
     margin-bottom: 10px;
@@ -453,7 +450,6 @@ nav .hamburger {
 
 .qualities .container .card {
     flex: 1;
-    min-width: 280px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -768,10 +764,6 @@ nav .hamburger {
         margin-bottom: 2rem;
         width: 100%;
     }
-    .who_are_we .container .image_banner img {
-        height: auto;
-        max-height: 380px;
-    }
 }
 
 
@@ -904,9 +896,8 @@ nav .hamburger {
     .reservation .container .banner {
         width: 100%;
     }
-    .reservation .container .banner .reservation_form_box form div {
-        flex-direction: column;
-        gap: 0;
+    .reservation .container .banner .reservation_form_box {
+        width: 100%;
     }
 }
 
