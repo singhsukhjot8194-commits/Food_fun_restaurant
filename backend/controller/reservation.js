@@ -1,21 +1,27 @@
-// Replace this URL with your actual deployed Render backend URL
-const BACKEND_URL = "https://food-fun-restaurant-backend.onrender.com";
+import ErrorHandler from "../error/error.js"; // Fixed relative path
+import { Reservation } from "../models/reservationSchema.js"; // Fixed typo 'module' -> 'models'
 
-const handleReservation = async(e) => {
-    e.preventDefault();
+export const SendReservation = async(req, res, next) => {
+    const { firstName, lastName, email, phone, date, time } = req.body;
+
+    // 1. Check if ANY required field is missing
+    if (!firstName || !lastName || !email || !phone || !date || !time) {
+        return next(new ErrorHandler("Please fill the full reservation form!", 400));
+    }
+
+    // 2. Try creating the reservation in MongoDB
     try {
-        const { data } = await axios.post(
-            `${BACKEND_URL}/api/v1/reservation/send`, { firstName, lastName, email, date, time, phone }, {
-                headers: { "Content-Type": "application/json" },
-                withCredentials: true,
-            }
-        );
-        toast.success(data.message);
-        navigate("/success");
+        await Reservation.create({ firstName, lastName, email, phone, date, time });
+        res.status(200).json({
+            success: true,
+            message: "Reservation sent Successfully",
+        });
     } catch (error) {
-        // FIX: Safely access error response to prevent "Cannot read properties of undefined (reading 'data')"
-        const errorMessage = error.response ? .data ? .message || "Server error. Please try again later.";
-        toast.error(errorMessage);
-        console.error("Reservation failed:", error);
+        if (error.name === "ValidationError") {
+            const validationError = Object.values(error.errors).map((err) => err.message);
+
+            return next(new ErrorHandler(validationError.join(", "), 400));
+        }
+        return next(error);
     }
 };

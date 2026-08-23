@@ -18,16 +18,7 @@ app.use(cors({
 
 );
 
-app.use(
-    cors({
-        origin: [
-            "http://localhost:5173",
-            "https://food-fun-restaurant.onrender.com" // Your deployed frontend URL
-        ],
-        methods: ["POST", "GET", "PUT", "DELETE"],
-        credentials: true,
-    })
-);
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
