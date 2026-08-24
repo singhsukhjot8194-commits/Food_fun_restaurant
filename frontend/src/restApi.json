@@ -1,27 +1,25 @@
 {
-    "data": [
-        {"ourQualities" : [
-            {
+    "data": [{
+        "ourQualities": [{
                 "id": 1,
                 "image": "./quality_food.svg",
                 "title": "QUALITY FOOD",
-                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis repellendus officia qui repellat." 
+                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis repellendus officia qui repellat."
             },
             {
                 "id": 2,
                 "image": "./super_taste.svg",
                 "title": "SUPER TASTE",
-                "description": "Lorem ipsum dolor sit amet consectetur, adipisicing sit amet elit. Sit voluptates quaerat pariatur." 
+                "description": "Lorem ipsum dolor sit amet consectetur, adipisicing sit amet elit. Sit voluptates quaerat pariatur."
             },
             {
                 "id": 3,
                 "image": "./fast_delivery.svg",
                 "title": "FAST DELIVERY",
-                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis repellendus officia qui repellat." 
+                "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis repellendus officia qui repellat."
             }
         ],
-        "dishes": [
-            {
+        "dishes": [{
                 "id": 1,
                 "image": "./dinner1.jpeg",
                 "title": "ROASTED LAMB RUMP",
@@ -70,8 +68,7 @@
                 "category": "Dinner"
             }
         ],
-        "team": [
-            {
+        "team": [{
                 "id": 1,
                 "image": "./team_member_1.png",
                 "name": "JOHNATHAN TYLER",
@@ -96,31 +93,32 @@
                 "designation": "Senior Chef"
             }
         ],
-        "testimonials": [
-            {
+        "testimonials": [{
                 "id": 1,
-                "image": "./review1.png",
-                "description": "Morbi nulla nec dui lacus, in. Libero in pretium metus massa. Sodales dignissim vitae mauris varius faucibus. Eleifend dui, non laoreet ac luctus facilisis diam. Enim scelerisque vel at id viverra tellus.",
-                "rating": 4,
-                "userName": "Jane Cooper"
+                "image": "/review_1.png",
+                "description": "An absolute culinary marvel! The flavors were exquisitely balanced, and the ambiance made our anniversary unforgettable. Highly recommend the citrus cured salmon and grilled fish!",
+                "rating": 5,
+                "userName": "Jane Cooper",
+                "tag": "Verified Diner"
             },
             {
                 "id": 2,
-                "image": "./review2.png",
-                "description": "Tortor vel nunc netus pharetra enim, enim dolor mauris in. Sit nam fringilla in egestas. Libero condimentum quis in vulputate adipiscing venenatis augue. Venenatis faucibus.",
-                "rating": 4.5,
-                "userName": "Esther Howard"
+                "image": "/review_2.png",
+                "description": "The finest dining experience in town. Every single course was presented like artwork, and the hospitality made us feel truly welcomed. The roasted lamb rump is out of this world!",
+                "rating": 5,
+                "userName": "Esther Howard",
+                "tag": "Food Critic"
             },
             {
                 "id": 3,
-                "image": "./review3.png",
-                "description": "Tortor vel nunc netus pharetra enim, enim dolor mauris in. Sit nam fringilla in egestas. Libero condimentum quis in vulputate adipiscing venenatis augue. Venenatis faucibus.",
+                "image": "/review_3.png",
+                "description": "Prompt table service, breathtaking presentation, and flavors that leave you wanting more. We booked for a family party of 8 and everyone was thoroughly impressed.",
                 "rating": 5,
-                "userName": "Guy Hawkins"
+                "userName": "Guy Hawkins",
+                "tag": "Regular Guest"
             }
         ],
-        "who_we_are": [
-            {
+        "who_we_are": [{
                 "id": 1,
                 "number": "14",
                 "title": "Restaurants"
@@ -141,8 +139,7 @@
                 "title": "Food Dishes"
             }
         ],
-        "navbarLinks": [
-            {
+        "navbarLinks": [{
                 "id": 1,
                 "title": "HOME",
                 "link": "heroSection"
@@ -168,7 +165,6 @@
                 "link": "reservation"
             }
         ]
-    
-    } 
-    ]
+
+    }]
 }
