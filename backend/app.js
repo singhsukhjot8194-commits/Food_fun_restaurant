@@ -22,7 +22,7 @@ app.use(cors({
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use("https://food-fun-restaurant-ienxtshoj-sukhjot-singh.vercel.app/", reservationRouter);
+app.use("/api/v1/reservation", reservationRouter);
 
 dbConnection();
 app.use(errorMiddleware);
