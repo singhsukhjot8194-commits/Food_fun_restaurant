@@ -1,9 +1,24 @@
 import React, { useState } from "react";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
-import { FaCalendarAlt, FaClock, FaUser, FaEnvelope, FaPhone, FaMapMarkerAlt, FaPhoneAlt, FaCheckCircle, FaSpinner } from "react-icons/fa";
+import {
+  FaCalendarAlt,
+  FaClock,
+  FaUser,
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaCheckCircle,
+  FaSpinner,
+} from "react-icons/fa";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+
+// Uses environment variable in production, falls back to live Render backend or localhost
+const SERVER_URL =
+  import.meta.env.VITE_SERVER_URL ||
+  "https://food-fun-restaurant-backend.onrender.com";
 
 const Reservation = () => {
   const [firstName, setFirstName] = useState("");
@@ -25,7 +40,7 @@ const Reservation = () => {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        "http://localhost:4000/api/v1/reservation/send",
+        `${SERVER_URL}/api/v1/reservation/send`,
         { firstName, lastName, email, phone, date, time },
         {
           headers: {
@@ -44,7 +59,8 @@ const Reservation = () => {
       navigate("/success");
     } catch (error) {
       const errorMsg =
-        error.response?.data?.message || "Failed to submit reservation. Please try again.";
+        error.response?.data?.message ||
+        "Failed to submit reservation. Please try again.";
       toast.error(errorMsg);
     } finally {
       setLoading(false);
@@ -63,7 +79,8 @@ const Reservation = () => {
             Reserve Your <span className="highlight">Dining Experience</span>
           </h2>
           <p className="subLight">
-            Whether it's an intimate date, anniversary, or a lively family dinner, we ensure every moment is extraordinary.
+            Whether it's an intimate date, anniversary, or a lively family
+            dinner, we ensure every moment is extraordinary.
           </p>
 
           <div className="reservationDetails">
