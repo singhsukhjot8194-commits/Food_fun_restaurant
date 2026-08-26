@@ -18,7 +18,7 @@ import { useNavigate } from "react-router-dom";
 // Vercel Environment Variable se URL lega, warna Render live URL setup rakhega
 const SERVER_URL =
   import.meta.env.VITE_SERVER_URL ||
-  "https://food-fun-restaurant-backend.onrender.com";
+  "https://food-fun-restaurant.vercel.app/";
 
 const Reservation = () => {
   const [firstName, setFirstName] = useState("");
