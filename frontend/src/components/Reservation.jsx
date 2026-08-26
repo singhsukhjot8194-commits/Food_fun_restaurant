@@ -15,7 +15,7 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
-// Uses environment variable in production, falls back to live Render backend or localhost
+// Vercel Environment Variable se URL lega, warna Render live URL setup rakhega
 const SERVER_URL =
   import.meta.env.VITE_SERVER_URL ||
   "https://food-fun-restaurant-backend.onrender.com";
@@ -79,8 +79,7 @@ const Reservation = () => {
             Reserve Your <span className="highlight">Dining Experience</span>
           </h2>
           <p className="subLight">
-            Whether it's an intimate date, anniversary, or a lively family
-            dinner, we ensure every moment is extraordinary.
+            Whether it's an intimate date, anniversary, or a lively family dinner, we ensure every moment is extraordinary.
           </p>
 
           <div className="reservationDetails">
