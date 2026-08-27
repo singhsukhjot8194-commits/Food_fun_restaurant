@@ -15,10 +15,9 @@ import axios from "axios";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
-// Vercel Environment Variable se URL lega, warna Render live URL setup rakhega
-const SERVER_URL =
-  import.meta.env.VITE_SERVER_URL ||
-  "https://food-fun-restaurant-backend.onrender.com";
+// Safe Base URL (trailing slash remove karta hai)
+const RAW_URL = import.meta.env.VITE_SERVER_URL || "https://food-fun-restaurant-backend.onrender.com";
+const SERVER_URL = RAW_URL.replace(/\/$/, "");
 
 const Reservation = () => {
   const [firstName, setFirstName] = useState("");
