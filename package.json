@@ -5,12 +5,11 @@
     "license": "ISC",
     "author": "sukhjot singh",
     "type": "module",
-    "main": "index.js",
+    "main": "backend/server.js",
     "scripts": {
-
         "dev": "nodemon backend/server.js",
         "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
-        "start": "nodemon backend/server.js"
+        "start": "node backend/server.js"
     },
     "dependencies": {
         "cors": "^2.8.6",
